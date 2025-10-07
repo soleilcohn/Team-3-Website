@@ -16,7 +16,6 @@
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     .container{max-width:1100px;margin:0 auto;padding:0 18px}
 
-    /* ===== Header / Nav (full-width, equal tab spacing) ===== */
     header{background:var(--primary);position:sticky;top:0;z-index:10;border-bottom:3px solid var(--primary-dark);box-shadow:0 2px 10px rgba(0,0,0,.18)}
     header .container{max-width:100%;width:100%;padding:0 16px;margin:0}
     .nav{display:grid;grid-template-columns:auto 1fr;align-items:center;padding:.9rem 0}
@@ -35,13 +34,11 @@
       .nav-links a{text-align:left;padding:1rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.12)}
     }
 
-    /* ===== Page hero & content ===== */
     .page-hero{background:var(--section);padding:3rem 0;border-bottom:1px solid var(--border);text-align:center}
     h1,h2{color:#6B1212;margin:0 0 .6rem}
     p.lead{color:var(--muted)}
     section{padding:2.6rem 0}
 
-    /* ===== Two-image gallery ===== */
     .design-gallery{padding:2.2rem 0}
     .gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
     @media (max-width:800px){ .gallery-grid{grid-template-columns:1fr} }
@@ -49,12 +46,10 @@
     .img-card img{width:100%;height:100%;display:block;aspect-ratio:4/3;object-fit:cover}
     .img-cap{padding:.8rem 1rem;color:var(--muted);font-size:.95rem}
 
-    /* ===== Content cards ===== */
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem}
     .card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.2rem;box-shadow:0 8px 18px rgba(0,0,0,.06)}
     .spec{display:flex;gap:10px;margin:.4rem 0;color:var(--muted)}
 
-    /* ===== Footer (icon buttons) ===== */
     footer{background:#fff;color:#2b2f33;padding:2.5rem 0 1rem;margin-top:3rem;border-top:1px solid var(--border)}
     .footer-main{display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:space-between;max-width:1100px;margin:0 auto 1rem}
     .footer-block{min-width:220px}
@@ -83,7 +78,6 @@
 <body>
 <header>
   <div class="container nav">
-    <!-- Logo pinned left; links fill; mobile hamburger -->
     <a href="index.html" class="logo" aria-label="Home">
       <img src="img/appa.png" alt="appa logo">
       <span class="sr-only">appa</span>
@@ -111,7 +105,6 @@
   </div>
 </div>
 
-<!-- Two-image gallery section -->
 <section class="design-gallery">
   <div class="container">
     <div class="gallery-grid">
@@ -163,7 +156,6 @@
 
 <footer>
   <div class="footer-main">
-    <!-- Contact icons -->
     <div class="footer-block">
       <h4>Contact</h4>
       <div class="footer-social">
@@ -182,7 +174,6 @@
       </div>
     </div>
 
-    <!-- Social icons -->
     <div class="footer-block">
       <h4>Follow Us</h4>
       <div class="footer-social">
