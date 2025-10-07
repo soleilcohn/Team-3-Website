@@ -25,7 +25,6 @@
     .container{max-width:1200px;margin:0 auto;padding:0 18px}
     .sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-    /* ===== Header / Nav (full-width, equal tab spacing, logo pinned left) ===== */
     header{
       background:var(--nav-bg);position:sticky;top:0;z-index:10;
       box-shadow:0 2px 10px rgba(0,0,0,.18);border-bottom:3px solid var(--primary-dark)
@@ -53,13 +52,11 @@
       .nav-links a{text-align:left;padding:1rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.12)}
     }
 
-    /* ===== Page Intro ===== */
     section{padding:3.5rem 0}
     .center{text-align:center}
     h2{font-size:2.3rem;margin:0 0 1.2rem;color:#6B1212}
     p.lead{color:var(--muted);font-size:1.06rem;line-height:1.65}
 
-    /* ===== Contact Layout ===== */
     .contact-wrap{
       max-width:1100px;margin:0 auto;
       display:flex;gap:48px;flex-wrap:wrap;
@@ -75,7 +72,6 @@
     .form-col,.map-col{flex:1 1 360px;min-width:320px;max-width:520px}
     .block-title{font-size:1.05rem;font-weight:900;letter-spacing:.06em;color:#6B1212;margin:0 0 .6rem}
 
-    /* ===== Form ===== */
     label{font-weight:600;font-size:.95rem;margin-top:12px;display:block}
     input,select,textarea{
       width:100%;font:inherit;font-size:.96rem;
@@ -98,14 +94,12 @@
     }
     .btn:hover{background:#4B0012;border-color:#4B0012}
 
-    /* ===== Map / Info ===== */
     iframe{
       width:100%;height:270px;border:0;border-radius:12px;
       box-shadow:0 6px 16px rgba(0,0,0,.08);margin:.4rem 0 1rem;
     }
     .visit{color:var(--muted);line-height:1.55}
 
-    /* ===== Footer (icons + quick links) ===== */
     footer{background:#fff;color:#2b2f33;margin-top:auto;border-top:1px solid var(--border);padding:2.5rem 0 1rem}
     .footer-main{display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:space-between;max-width:1100px;margin:0 auto 1rem}
     .footer-block{min-width:220px}
@@ -162,7 +156,6 @@
   </div>
 </header>
 
-<!-- Intro band -->
 <section style="background:var(--section);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="container center">
     <h2>Contact</h2>
@@ -170,21 +163,15 @@
   </div>
 </section>
 
-<!-- Content -->
 <section>
   <div class="contact-wrap">
-    <!-- Form -->
     <div class="form-col card">
       <div class="block-title">Send us a message</div>
 
-      <!-- Uses FormSubmit to email to ellacohn@icloud.com -->
       <form class="contact-form" method="POST" action="https://formsubmit.co/ellacohn@icloud.com">
-        <!-- FormSubmit helpers (optional but nice) -->
         <input type="hidden" name="_subject" value="New message from Team 3 — Contact form">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
-        <!-- If you make a thank-you page, set it here -->
-        <!-- <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html"> -->
 
         <div class="row">
           <div>
@@ -231,7 +218,6 @@
       </p>
     </div>
 
-    <!-- Map & Visit Info -->
     <div class="map-col card">
       <div class="block-title">Visit us</div>
       <iframe
@@ -248,14 +234,11 @@
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
   <div class="footer-main">
-    <!-- Contact icons -->
     <div class="footer-block">
       <h4>Contact</h4>
       <div class="footer-social">
-        <!-- Phone -->
         <a class="social-btn" href="tel:+11234567890" aria-label="Call us">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path fill="currentColor"
@@ -263,7 +246,6 @@
           </svg>
           <span class="sr-only">Call</span>
         </a>
-        <!-- Email -->
         <a class="social-btn" href="mailto:ellacohn@icloud.com" aria-label="Email us">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path fill="currentColor"
@@ -274,7 +256,6 @@
       </div>
     </div>
 
-    <!-- Social icons -->
     <div class="footer-block">
       <h4>Follow Us</h4>
       <div class="footer-social">
