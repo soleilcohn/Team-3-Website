@@ -12,14 +12,18 @@
       --nav-bg:#800020;--nav-text:#FFFFFF;
       --ink:#1F2224;--muted:#63666A;--bg:#FCFAF9;--surface:#FFFFFF;--border:#E7E1DE
     }
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;height:100%}
+    body{
+      margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);
+      min-height:100vh;display:flex;flex-direction:column
+    }
+    main{flex:1}
     a{color:var(--primary);text-decoration:none}
     a:hover{color:var(--primary-dark);text-decoration:underline}
     .container{max-width:1200px;margin:0 auto;padding:0 18px}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-    /* ===== Header / Nav (full-width, equal tab spacing) ===== */
     header{background:var(--nav-bg);position:sticky;top:0;z-index:10;box-shadow:0 2px 10px rgba(0,0,0,.18);border-bottom:3px solid var(--primary-dark)}
     header .container{max-width:100%;width:100%;padding:0 16px;margin:0;}
     .nav{display:grid;grid-template-columns:auto 1fr;align-items:center;padding:.9rem 0}
@@ -36,13 +40,12 @@
       .nav-links{
         display:none;position:absolute;left:0;right:0;top:100%;
         background:var(--nav-bg);border-top:1px solid var(--primary-dark);
-        box-shadow:0 8px 24px rgba(0,0,0,.2);grid-template-columns:1fr;
+        box-shadow:0 8px 24px rgba(0,0,0,.2);grid-template-columns:1fr;z-index:20
       }
       .nav-links.open{display:grid}
       .nav-links a{text-align:left;padding:1rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.12)}
     }
 
-    /* ===== Sections / Cards ===== */
     section{padding:3.5rem 0}
     h1,h2{color:#6B1212;margin:0 0 1.2rem}
     p.lead{color:var(--muted);font-size:1.06rem;line-height:1.65}
@@ -50,26 +53,15 @@
     .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem}
     .card{background:var(--surface);border-radius:18px;box-shadow:0 8px 20px rgba(0,0,0,.08);padding:1.6rem 1.2rem;border:1px solid var(--border);text-align:center}
 
-    /* ===== “Why-Us style” points (no boxes) ===== */
-    .points{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:1.2rem;
-    }
+    .points{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
     .point{padding:.6rem 0}
     .point .label{
-      display:inline-block;
-      font-weight:900;letter-spacing:.04em;text-transform:uppercase;
-      color:var(--primary);
-      border-left:6px solid var(--primary);
-      padding:.2rem .6rem .2rem .6rem;
-      margin-bottom:.25rem;
-      background:transparent;
+      display:inline-block;font-weight:900;letter-spacing:.04em;text-transform:uppercase;
+      color:var(--primary);border-left:6px solid var(--primary);padding:.2rem .6rem;margin-bottom:.25rem;background:transparent
     }
     .point h3{margin:.25rem 0 .35rem;color:#4e0d0d}
     .point p{margin:.2rem 0;color:var(--muted);line-height:1.6}
 
-    /* ===== CTA band (same style as before) ===== */
     .cta-band{
       background:var(--primary);color:#fff;border-radius:16px;
       padding:1.4rem 1.2rem;display:flex;flex-wrap:wrap;
@@ -83,26 +75,33 @@
     .btn:hover{background:#F7F1F1;color:#5F0018}
     .points + .cta-band{margin-top:24px}
 
-    /* ===== Footer ===== */
     footer{background:#fff;color:#2b2f33;padding:2.5rem 0 1rem;margin-top:3rem;border-top:1px solid var(--border)}
+    footer .container{max-width:1200px;margin:0 auto;padding:0 18px}
     .footer-main{display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:space-between;max-width:1100px;margin:0 auto 1rem}
-    .footer-block{min-width:180px}
+    .footer-block{min-width:200px}
     .footer-block h4{font-size:1.05rem;margin:.2rem 0 .7rem}
     .footer-links a{color:#6a717a;display:inline-block;margin:.35rem .5rem .35rem 0}
     .footer-links a:hover{color:var(--primary)}
-    .footer-social{display:flex;gap:1rem;margin-top:.4rem}
-    .footer-social a{color:#6a717a}
-    .footer-social a:hover{color:var(--primary)}
+    .footer-social{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .footer-social a:not(.social-btn){color:#6a717a}
+    .footer-social a:not(.social-btn):hover{color:var(--primary)}
+    .social-btn{
+      width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;
+      border-radius:999px;border:2px solid var(--primary);color:var(--primary);background:#fff;
+      transition:background .15s,color .15s,transform .15s,box-shadow .15s;
+    }
+    .social-btn:hover{background:var(--primary);color:#fff;transform:translateY(-1px);box-shadow:0 6px 14px rgba(0,0,0,.12)}
+    .social-btn svg{width:22px;height:22px;display:block}
     .copyright{text-align:center;color:#6a717a;font-size:.95rem}
   </style>
 
   <script>
     document.addEventListener("DOMContentLoaded",()=>{
-      const b=document.querySelector('.menu-btn'),n=document.querySelector('.nav-links');
-      if(!b||!n) return;
-      b.addEventListener('click',()=>{
-        const o=n.classList.toggle('open');
-        b.setAttribute('aria-expanded',o?'true':'false');
+      const btn=document.querySelector('.menu-btn'), links=document.querySelector('.nav-links');
+      if(!btn||!links) return;
+      btn.addEventListener('click',()=>{
+        const open=links.classList.toggle('open');
+        btn.setAttribute('aria-expanded',open?'true':'false');
       });
     });
   </script>
@@ -129,7 +128,6 @@
 </header>
 
 <main>
-  <!-- Top band -->
   <section style="background:var(--section);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
     <div class="container center" style="max-width:900px;">
       <h1>Partners</h1>
@@ -137,7 +135,6 @@
     </div>
   </section>
 
-  <!-- Named partners (cards) -->
   <section>
     <div class="container">
       <div class="cards">
@@ -149,8 +146,7 @@
     </div>
   </section>
 
-  <!-- Revenue & access (NO heading; Why-Us style points, no boxes) -->
-  <section aria-label="Revenue & Access">
+  <section aria-label="Revenue and Access">
     <div class="container">
       <div class="points">
         <div class="point">
@@ -162,40 +158,38 @@
         <div class="point">
           <div class="label">Device Sales</div>
           <h3>One-Time Hardware</h3>
-          <p>Parents purchase the necklace (with multiple band styles). The device is a one-time buy that drives ongoing refill demand.</p>
+          <p>Parents purchase the necklace with multiple band styles. The device is a one-time buy that drives ongoing refill demand.</p>
         </div>
 
         <div class="point">
           <div class="label">Refills</div>
           <h3>Recurring Cartridges</h3>
-          <p>Replaceable albuterol capsules/cartridges on a recurring basis—similar cadence to rescue inhalers.</p>
+          <p>Replaceable albuterol capsules or cartridges on a recurring cadence similar to rescue inhalers.</p>
         </div>
 
         <div class="point">
           <div class="label">Insurance &amp; Bundling</div>
-          <h3>Coverage &amp; Access</h3>
-          <p>With partners like AstraZeneca, GSK, Teva, or Boehringer Ingelheim, the device+medication can be bundled with prescriptions and reimbursed.</p>
+          <h3>Coverage and Access</h3>
+          <p>With partners like AstraZeneca, GSK, Teva, or Boehringer Ingelheim, the device plus medication can be bundled with prescriptions and reimbursed.</p>
         </div>
 
         <div class="point">
           <div class="label">Subscription</div>
           <h3>Auto-Refill Convenience</h3>
-          <p>Optional monthly/annual plans for automatic refills and replacements create predictable revenue and convenience for families.</p>
+          <p>Optional monthly or annual plans for automatic refills and replacements create predictable revenue and convenience for families.</p>
         </div>
       </div>
 
-      <!-- CTA band aligned under points -->
       <div class="cta-band" role="region" aria-label="Partner CTA">
         <div>
           <h3>Interested in partnering?</h3>
-          <p style="margin:0;opacity:.95">Let’s explore pilot studies, regulatory pathways, and bundled distribution.</p>
+          <p style="margin:0;opacity:.95">Explore pilot studies, regulatory pathways, and bundled distribution.</p>
         </div>
         <a class="btn" href="contact.html">Book a Demo</a>
       </div>
     </div>
   </section>
 
-  <!-- Quote / testimonial -->
   <section>
     <div class="container">
       <div class="card" style="text-align:left;border-left:5px solid var(--primary);max-width:900px;margin:0 auto;">
@@ -208,56 +202,52 @@
   </section>
 </main>
 
-
 <footer>
+  <div class="container">
     <div class="footer-main">
-      <!-- Contact icons -->
       <div class="footer-block">
         <h4>Contact</h4>
         <div class="footer-social">
-          <!-- Phone -->
           <a class="social-btn" href="tel:+11234567890" aria-label="Call us">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path fill="currentColor"
-                    d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1H7.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
+                d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1H7.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
             </svg>
             <span class="sr-only">Call</span>
           </a>
-          <!-- Email -->
-          <a class="social-btn" href="mailto:info@team3.com" aria-label="Email us">
+          <a class="social-btn" href="mailto:ellacohn@icloud.com" aria-label="Email us">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path fill="currentColor"
-                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
             </svg>
             <span class="sr-only">Email</span>
           </a>
         </div>
       </div>
-  
-      <!-- Social icons -->
+
       <div class="footer-block">
         <h4>Follow Us</h4>
         <div class="footer-social">
           <a class="social-btn" href="https://www.linkedin.com/company/your-handle" target="_blank" rel="noopener" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path fill="currentColor"
-                    d="M4.98 3.5A2.48 2.48 0 1 1 0 3.5a2.48 2.48 0 0 1 4.98 0zM.41 8h4.9v16H.41V8zM8 8h4.71v2.19h.07c.66-1.24 2.27-2.47 4.68-2.47 5 0 5.93 3.29 5.93 7.57V24h-4.9v-8.69c0-2.07-.04-4.73-2.88-4.73-2.88 0-3.32 2.25-3.32 4.58V24H8V8z"/>
+                d="M4.98 3.5A2.48 2.48 0 1 1 0 3.5a2.48 2.48 0 0 1 4.98 0zM.41 8h4.9v16H.41V8zM8 8h4.71v2.19h.07c.66-1.24 2.27-2.47 4.68-2.47 5 0 5.93 3.29 5.93 7.57V24h-4.9v-8.69c0-2.07-.04-4.73-2.88-4.73-2.88 0-3.32 2.25-3.32 4.58V24H8V8z"/>
             </svg>
             <span class="sr-only">LinkedIn</span>
           </a>
-  
           <a class="social-btn" href="https://www.facebook.com/your-page" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path fill="currentColor"
-                    d="M22.676 0H1.326A1.326 1.326 0 0 0 0 1.326v21.348C0 23.406.594 24 1.326 24h11.495v-9.294H9.847V11.01h2.974V8.41c0-2.943 1.796-4.545 4.418-4.545 1.256 0 2.337.093 2.651.135v3.07l-1.82.001c-1.427 0-1.703.679-1.703 1.674v2.195h3.406l-.444 3.696h-2.962V24h5.809A1.326 1.326 0 0 0 24 22.674V1.326A1.326 1.326 0 0 0 22.676 0z"/>
+                d="M22.676 0H1.326A1.326 1.326 0 0 0 0 1.326v21.348C0 23.406.594 24 1.326 24h11.495v-9.294H9.847V11.01h2.974V8.41c0-2.943 1.796-4.545 4.418-4.545 1.256 0 2.337.093 2.651.135v3.07l-1.82.001c-1.427 0-1.703.679-1.703 1.674v2.195h3.406l-.444 3.696h-2.962V24h5.809A1.326 1.326 0 0 0 24 22.674V1.326A1.326 1.326 0 0 0 22.676 0z"/>
             </svg>
             <span class="sr-only">Facebook</span>
           </a>
         </div>
       </div>
     </div>
+
     <div class="copyright">&copy; 2025 Team 3 Corp. All rights reserved.</div>
-  </footer>
-  </body>
-  </html>
-  
+  </div>
+</footer>
+</body>
+</html>
