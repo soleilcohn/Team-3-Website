@@ -8,25 +8,23 @@
   <meta name="description" content="Discreet, wearable inhaler necklace so kids never leave rescue behind.">
 
   <style>
-    /* ===== Brand Palette (Burgundy + Dark Gray) ===== */
     :root{
-      --primary:#800020;        /* Burgundy: nav, headings, CTAs */
-      --primary-dark:#5F0018;   /* Darker burgundy for hovers */
-      --section:#F3EFED;        /* Soft warm section background */
-      --tint:#EBD9DC;           /* Very light burgundy tint */
-      --rose-card:#D9C2C2;      /* Subtle rosy card background */
+      --primary:#800020;        
+      --primary-dark:#5F0018; 
+      --section:#F3EFED;        
+      --tint:#EBD9DC;           
+      --rose-card:#D9C2C2;     
 
-      --ink:#1F2224;            /* Main text */
-      --muted:#63666A;          /* Dark gray secondary text */
-      --bg:#FCFAF9;             /* Page background */
-      --surface:#FFFFFF;        /* Cards / surfaces */
-      --border:#E7E1DE;         /* Subtle divider */
+      --ink:#1F2224;           
+      --muted:#63666A;         
+      --bg:#FCFAF9;             
+      --surface:#FFFFFF;       
+      --border:#E7E1DE;         
 
       --nav-bg:var(--primary);
       --nav-text:#FFFFFF;
     }
 
-    /* ===== Base ===== */
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
@@ -35,24 +33,23 @@
     .container{max-width:1200px;margin:0 auto;padding:0 18px}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-    /* ===== Header / Nav (full-width, equal tab spacing) ===== */
     header{
       background:var(--nav-bg);
       position:sticky;top:0;z-index:10;
       box-shadow:0 2px 10px rgba(0,0,0,.18);
       border-bottom:3px solid var(--primary-dark);
     }
-    header .container{max-width:100%;width:100%;padding:0 16px;margin:0;} /* span full width */
+    header .container{max-width:100%;width:100%;padding:0 16px;margin:0;} 
 
     .nav{display:grid;grid-template-columns:auto 1fr;align-items:center;padding:.9rem 0}
     .nav > nav{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;width:100%;position:relative}
 
     .logo{display:flex;align-items:center}
-    .logo img{height:42px;width:auto;display:block;filter:invert(1) brightness(1.15);} /* white logo on burgundy */
+    .logo img{height:42px;width:auto;display:block;filter:invert(1) brightness(1.15);} 
 
     .nav-links{
       display:grid;
-      grid-template-columns:repeat(7,1fr); /* 7 tabs */
+      grid-template-columns:repeat(7,1fr); 
       gap:0; width:100%;
     }
     .nav-links a{
@@ -73,31 +70,28 @@
         background:var(--primary);
         border-top:1px solid var(--primary-dark);
         box-shadow:0 8px 24px rgba(0,0,0,.2);
-        grid-template-columns:1fr; /* stack */
+        grid-template-columns:1fr; =
       }
       .nav-links.open{display:grid}
       .nav-links a{text-align:left;padding:1rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.12)}
     }
 
-    /* ===== Hero ===== */
     .hero{
       background:url('img/people.png') center/cover no-repeat;
       min-height:58vh;display:flex;align-items:center;justify-content:center;position:relative
     }
     .hero .overlay{
-      background:rgba(128, 0, 32, 0.612); /* Burgundy overlay */
+      background:rgba(128, 0, 32, 0.612); 
       color:#fff;padding:2.4rem 2rem;border-radius:1.6rem;text-align:center;max-width:900px
     }
     .hero h1{font-size:3rem;margin:0 0 1rem}
     .hero p{font-size:1.15rem;margin:0 0 1.6rem}
 
-    /* ===== Buttons ===== */
     .btn{background:#eee4e4;color:#5F0018;padding:.95rem 1.6rem;border-radius:12px;font-size:1rem;border:2px solid #5F0018;font-weight:800;cursor:pointer}
     .btn:hover{background:#4B0012;border-color:#4B0012;color:#fff}
     .btn-ghost{background:#eee4e4;color:#5F0018;border:2px solid #5F0018}
     .btn-ghost:hover{background:#F7F1F1}
 
-    /* ===== Sections / Cards / Stats ===== */
     section{padding:3.5rem 0}
     h2{font-size:2.3rem;margin:0 0 1.2rem;color:#6B1212}
     p.lead{color:var(--muted);font-size:1.06rem;line-height:1.65}
@@ -121,7 +115,6 @@
     .testimonial .quote{font-size:1.05rem;line-height:1.6}
     .testimonial .by{margin-top:.7rem;color:var(--muted);font-weight:700}
 
-    /* ===== Footer (icon buttons) ===== */
     footer{background:#fff;color:#2b2f33;padding:2.5rem 0 1rem;margin-top:3rem;border-top:1px solid var(--border)}
     .footer-main{display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:space-between;max-width:1100px;margin:0 auto 1rem}
     .footer-block{min-width:220px}
@@ -163,7 +156,6 @@
 <body>
 <header>
   <div class="container nav">
-   <!-- Logo pinned left; links fill; mobile hamburger -->
    <a href="index.html" class="logo" aria-label="Home">
     <img src="img/appa.png" alt="appa logo">
     <span class="sr-only">appa</span>
@@ -248,7 +240,6 @@
 
 <footer>
   <div class="footer-main">
-    <!-- Contact icons -->
     <div class="footer-block">
       <h4>Contact</h4>
       <div class="footer-social">
@@ -259,7 +250,7 @@
           </svg>
           <span class="sr-only">Call</span>
         </a>
-        <a class="social-btn" href="mailto:info@team3.com" aria-label="Email us">
+        <a class="social-btn" href="mailto:ellacohn@icloud.com" aria-label="Email us">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path fill="currentColor"
               d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
@@ -269,8 +260,6 @@
       </div>
     </div>
 
-
-    <!-- Social icons -->
     <div class="footer-block">
       <h4>Follow Us</h4>
       <div class="footer-social">
