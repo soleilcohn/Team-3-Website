@@ -19,7 +19,6 @@
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     .container{max-width:1100px;margin:0 auto;padding:0 18px}
 
-    /* ===== Header / Nav (full-width, equal tab spacing) ===== */
     header{
       background:var(--nav-bg);
       position:sticky;top:0;z-index:10;
@@ -47,15 +46,13 @@
       .nav-links a{text-align:left;padding:1rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.12)}
     }
 
-    /* ===== Page hero ===== */
     .page-hero{background:var(--section);padding:3rem 0;border-bottom:1px solid var(--border);text-align:center}
     h1,h2{color:#6B1212;margin:0 0 .6rem}
     p.lead{color:var(--muted)}
 
-    /* ===== Content + right-side images layout (no boxes) ===== */
     .why-wrap{
       display:grid;
-      grid-template-columns:minmax(300px, 680px) 360px; /* content left, images right */
+      grid-template-columns:minmax(300px, 680px) 360px; 
       gap:22px;
       align-items:start;
       padding:2.2rem 18px;
@@ -63,7 +60,6 @@
       margin:0 auto;
     }
 
-    /* Clean, unboxed points with tidy spacing */
     .points { display: grid; gap: 1.6rem; }
     .point { padding: .2rem 0 1.2rem; }
     .point + .point { border-top: 1px dashed var(--border); padding-top: 1.6rem; }
@@ -83,10 +79,9 @@
     .point ul{ margin:.2rem 0 0 0; padding-left:1.1rem; }
     .point li + li{ margin-top:.35rem; }
 
-    /* Right image stack */
     .side-stack{
       display:grid;
-      grid-template-rows:auto auto; /* two images stacked */
+      grid-template-rows:auto auto; 
       gap:22px;
       align-self:start;
     }
@@ -102,7 +97,6 @@
       .side-stack{grid-template-rows:auto;grid-auto-rows:auto}
     }
 
-    /* ===== Footer (icons) ===== */
     footer{background:#fff;color:#2b2f33;padding:2.5rem 0 1rem;margin-top:3rem;border-top:1px solid var(--border)}
     .footer-main{display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:space-between;max-width:1100px;margin:0 auto 1rem;padding:0 18px}
     .footer-block{min-width:220px}
@@ -150,7 +144,6 @@
 </header>
 
 <main>
-  <!-- Top band -->
   <section class="page-hero">
     <div class="container" style="max-width:860px;">
       <h1>Why Us</h1>
@@ -158,9 +151,7 @@
     </div>
   </section>
 
-  <!-- Content (left) + images (right) -->
   <section class="why-wrap">
-    <!-- Left: clean, unboxed points -->
     <div class="points">
       <div class="point">
         <div class="label">Problem</div>
@@ -185,7 +176,6 @@
       </div>
     </div>
 
-    <!-- Right: stacked images -->
     <aside class="side-stack" aria-label="Context images">
       <img src="img/demo1.png" alt="Active child outdoors wearing discreet device">
       <img src="img/demo2.png" alt="Parent and child smiling with confidence">
@@ -201,7 +191,7 @@
         <a class="social-btn" href="tel:+11234567890" aria-label="Call us">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1H7.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/></svg>
         </a>
-        <a class="social-btn" href="mailto:info@team3.com" aria-label="Email us">
+        <a class="social-btn" href="mailto:ellacohn@icloud.com" aria-label="Email us">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </a>
       </div>
